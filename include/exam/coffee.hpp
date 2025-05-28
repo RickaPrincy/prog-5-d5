@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
 
 namespace exam
 {
@@ -29,4 +30,6 @@ namespace exam
 		[[nodiscard]] virtual auto is_available() const -> bool;
 		virtual auto dispense() -> void;
 	};
+
+	auto coffee_type_to_string(CoffeeType type) -> std::string;
 }  // namespace exam

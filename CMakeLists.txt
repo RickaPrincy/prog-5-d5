@@ -42,8 +42,8 @@ endif()
 
 if(EXAM_IS_MAIN_PROJECT)
   configure_file(
-    ${EXAM_SOURCE_DIR}/.templates/${EXAM_CLI_NAME}Config.hpp.in
-    ${EXAM_SOURCE_DIR}/include/${EXAM_CLI_NAME}/${EXAM_CLI_NAME}Config.hpp
+    ${EXAM_SOURCE_DIR}/.templates/${EXAM_CLI_NAME}_config.hpp.in
+    ${EXAM_SOURCE_DIR}/include/${EXAM_CLI_NAME}/${EXAM_CLI_NAME}_config.hpp
     @ONLY)
 endif()
 

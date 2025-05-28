@@ -20,5 +20,6 @@ namespace exam
 
 		auto insert_card(std::shared_ptr<Card> card) -> void;
 		auto choose_coffee(CoffeeType type) -> Coffee;
+		auto take_out_card() -> std::shared_ptr<Card>;
 	};
 }  // namespace exam

@@ -9,10 +9,8 @@ namespace exam
 	{
 	public:
 		NotEnoughMoneyException(int balance, int required)
-			: std::runtime_error(
-				"Not enough money. Balance: " + std::to_string(balance) +
-				", Required: " + std::to_string(required)
-			  )
+			: std::runtime_error("Not enough money. Balance: " + std::to_string(balance) +
+								 ", Required: " + std::to_string(required))
 		{
 		}
 	};

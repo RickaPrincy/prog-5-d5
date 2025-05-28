@@ -22,6 +22,7 @@ namespace exam
 		{
 			throw std::invalid_argument("cannot withdraw a negative amount");
 		}
+
 		if (amount > m_balance)
 		{
 			throw NotEnoughMoneyException(m_balance, amount);

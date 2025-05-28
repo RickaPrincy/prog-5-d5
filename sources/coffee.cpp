@@ -3,6 +3,17 @@
 
 namespace exam
 {
+	auto coffee_type_to_string(CoffeeType type) -> std::string
+	{
+		switch (type)
+		{
+			case CoffeeType::ESPRESSO: return "Espresso";
+			case CoffeeType::LUNGO: return "Lungo";
+			case CoffeeType::CAPPUCCINO: return "Cappuccino";
+			default: return "Unknown";
+		}
+	}
+
 	Coffee::Coffee(CoffeeType type, int price, int stock)
 		: m_type{ type },
 		  m_price{ price },
@@ -34,7 +45,7 @@ namespace exam
 	{
 		if (m_stock <= 0)
 		{
-			throw OutOfStockException("Cannot dispense: out of stock.");
+			throw OutOfStockException(coffee_type_to_string(m_type) + " is out of stock.");
 		}
 		--m_stock;
 	}
