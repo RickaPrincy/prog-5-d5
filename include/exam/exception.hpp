@@ -1,12 +1,18 @@
 #pragma once
+
 #include <stdexcept>
+#include <string>
 
 namespace exam
 {
 	class NotEnoughMoneyException : public std::runtime_error
 	{
 	public:
-		NotEnoughMoneyException() : std::runtime_error("Not enough money.")
+		NotEnoughMoneyException(int balance, int required)
+			: std::runtime_error(
+				"Not enough money. Balance: " + std::to_string(balance) +
+				", Required: " + std::to_string(required)
+			  )
 		{
 		}
 	};
@@ -14,7 +20,8 @@ namespace exam
 	class OutOfStockException : public std::runtime_error
 	{
 	public:
-		OutOfStockException() : std::runtime_error("Out of stock.")
+		explicit OutOfStockException(const std::string& detail = "")
+			: std::runtime_error("Out of stock. " + detail)
 		{
 		}
 	};
@@ -22,7 +29,8 @@ namespace exam
 	class UnknownCoffeeException : public std::runtime_error
 	{
 	public:
-		UnknownCoffeeException() : std::runtime_error("Unknown coffee selected.")
+		explicit UnknownCoffeeException(const std::string& detail = "")
+			: std::runtime_error("Unknown coffee selected. " + detail)
 		{
 		}
 	};

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+
 namespace exam
 {
 	enum class CoffeeType : std::uint8_t
@@ -12,7 +13,7 @@ namespace exam
 
 	class Coffee
 	{
-	private:
+	protected:
 		CoffeeType m_type;
 		int m_price;
 		int m_stock;
@@ -20,10 +21,12 @@ namespace exam
 	public:
 		Coffee(CoffeeType type, int price, int stock);
 
-		[[nodiscard]] auto get_type() const -> CoffeeType;
-		[[nodiscard]] auto get_price() const -> int;
-		[[nodiscard]] auto get_stock() const -> int;
-		[[nodiscard]] auto is_available() const -> bool;
-		auto dispense() -> void;
+		virtual ~Coffee() = default;
+
+		[[nodiscard]] virtual auto get_type() const -> CoffeeType;
+		[[nodiscard]] virtual auto get_price() const -> int;
+		[[nodiscard]] virtual auto get_stock() const -> int;
+		[[nodiscard]] virtual auto is_available() const -> bool;
+		virtual auto dispense() -> void;
 	};
 }  // namespace exam

@@ -4,14 +4,15 @@ namespace exam
 {
 	class Card
 	{
-	private:
+	protected:
 		int m_balance;
 
 	public:
 		Card(int initial_balance = 0);
 
-		auto posit(int amount) -> void;
-		auto withdraw(int amount) -> void;
-		[[nodiscard]] auto getBalance() const -> int;
+		virtual ~Card() = default;
+		virtual auto deposit(int amount) -> void;
+		virtual auto withdraw(int amount) -> void;
+		[[nodiscard]] virtual auto get_balance() const -> int;
 	};
 }  // namespace exam
